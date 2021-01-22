@@ -1,0 +1,46 @@
+{
+  "name": "my_dreamed_library_api",
+  "version": "1.0.0",
+  "description": "My dreamed library apis for library management",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "prettier": "prettier --write src/*",
+    "start": "nodemon src/index.js",
+    "lint": "eslint --fix src/* --cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugomontero/my_dreamed_library_api.git"
+  },
+  "author": "hugo.montero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugomontero/my_dreamed_library_api/issues"
+  },
+  "homepage": "https://github.com/hugomontero/my_dreamed_library_api#readme",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run prettier && npm run lint && npx jest --passWithNoTests"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.1.0",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.21.16",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5"
+  }
+}
